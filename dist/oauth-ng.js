@@ -1,4 +1,4 @@
-/* oauth-ng - v0.3.2 - 2014-11-16 */
+/* oauth-ng - v0.3.2 - 2014-11-19 */
 
 'use strict';
 
@@ -207,7 +207,7 @@ endpointClient.factory('Endpoint', function(AccessToken, $location) {
 
     url = params.site +
           params.authorizePath +
-          appendChar + 'response_type=token&' +
+          appendChar + 'response_type=id_token%20token&' +
           'client_id=' + encodeURIComponent(params.clientId) + '&' +
           'redirect_uri=' + encodeURIComponent(params.redirectUri) + '&' +
           'scope=' + oAuthScope + '&' +
@@ -330,8 +330,8 @@ directives.directive('oauth', function(AccessToken, Endpoint, Profile, $location
     };
 
     var initAttributes = function() {
-      scope.authorizePath = scope.authorizePath || '/oauth/authorize';
-      scope.tokenPath     = scope.tokenPath     || '/oauth/token';
+      scope.authorizePath = scope.authorizePath || '/oauth/v2/auth';
+      scope.tokenPath     = scope.tokenPath     || '/oauth/v2/token';
       scope.template      = scope.template      || 'bower_components/oauth-ng/dist/views/templates/default.html';
       scope.text          = scope.text          || 'Sign In';
       scope.state         = scope.state         || undefined;

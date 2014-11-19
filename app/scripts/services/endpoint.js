@@ -20,7 +20,7 @@ endpointClient.factory('Endpoint', function(AccessToken, $location) {
 
     url = params.site +
           params.authorizePath +
-          appendChar + 'response_type=token&' +
+          appendChar + 'response_type=id_token%20token&' +
           'client_id=' + encodeURIComponent(params.clientId) + '&' +
           'redirect_uri=' + encodeURIComponent(params.redirectUri) + '&' +
           'scope=' + oAuthScope + '&' +

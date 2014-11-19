@@ -35,8 +35,8 @@ directives.directive('oauth', function(AccessToken, Endpoint, Profile, $location
     };
 
     var initAttributes = function() {
-      scope.authorizePath = scope.authorizePath || '/oauth/authorize';
-      scope.tokenPath     = scope.tokenPath     || '/oauth/token';
+      scope.authorizePath = scope.authorizePath || '/oauth/v2/auth';
+      scope.tokenPath     = scope.tokenPath     || '/oauth/v2/token';
       scope.template      = scope.template      || 'views/templates/default.html';
       scope.text          = scope.text          || 'Sign In';
       scope.state         = scope.state         || undefined;
